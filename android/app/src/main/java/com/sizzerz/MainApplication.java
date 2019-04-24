@@ -6,6 +6,7 @@ import com.facebook.react.ReactApplication;
 import com.imagepicker.ImagePickerPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.evollu.react.fcm.FIRMessagingPackage;
 // import com.evollu.react.fcm.FIRMessagingPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.idehub.GoogleAnalyticsBridge.GoogleAnalyticsBridgePackage;
@@ -43,6 +44,7 @@ public class MainApplication extends Application implements ReactApplication {
             new SplashScreenReactPackage(),
             new GoogleAnalyticsBridgePackage(),
             new RNGoogleSigninPackage(),
+            new FIRMessagingPackage(),
        //     new FIRMessagingPackage(),
             new FBSDKPackage(mCallbackManager)
            

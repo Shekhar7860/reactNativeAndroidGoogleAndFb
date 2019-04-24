@@ -26,17 +26,17 @@ export default class Login extends Component {
   }
 
 
-    componentDidMount = () => {
-      // try{
-      //   let result = await FCM.requestPermissions({badge: false, sound: true, alert: true});
-      // } catch(e){
-      //   console.error('error', e);
-      // }
+   async componentDidMount  ()  {
+      try{
+        let result = await FCM.requestPermissions({badge: false, sound: true, alert: true});
+      } catch(e){
+        console.error('error', e);
+      }
   
-      // FCM.getFCMToken().then(token => {
-      //   console.log("TOKEN (getFCMToken)", token);
-      //   this.setState({token: token || ""})
-      // });
+      FCM.getFCMToken().then(token => {
+        console.log("TOKEN (getFCMToken)", token);
+        this.setState({token: token || ""})
+      });
     
       // console.log('yes i am working')
    this.setupGoogleSignin();

@@ -6,6 +6,7 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Splash from './components/Splash';
 import Login from './components/Login';
+import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
 import ForgotPassword from './components/ForgotPassword';
 import SideMenu from './components/SideMenu';
 import { GoogleAnalyticsTracker } from 'react-native-google-analytics-bridge';
@@ -52,6 +53,10 @@ export default class App extends Component {
   }
   }
   componentDidMount = () => {
+    FCM.on(FCMEvent.Notification,  (notif) => {
+      alert('working')
+      console.log(notif)  //{ Item: 'cool', Another: 'cooler' }
+    })
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
    }
   
